@@ -1,73 +1,102 @@
-const state = {
-    values: {
-        vowelsToEncrypt: {
-            'a': 'ai',
-            'e': 'enter',
-            'i': 'imes',
-            'o': 'ober',
-            'u': 'ufat',
+function TranslatorApp() {
+    const state = {
+        values: {
+            dictionary: {
+                'a': 'ai',
+                'e': 'enter',
+                'i': 'imes',
+                'o': 'ober',
+                'u': 'ufat',
+            },
         },
-        vowelsToDecrypt: {
-            'ai': 'a',
-            'enter': 'e',
-            'imes': 'i',
-            'ober': 'o',
-            'ufat': 'u',
+        actions: {
+            selectInput: document.getElementById('inputToTranslate'),
+            selectResultArea: document.getElementById('resultArea'),
+            selectResultTitle: document.getElementById('resultTitle'),
+            selectResultText: document.getElementById('resultText'),
+            selectButtonToCopyTranslation: document.getElementById('buttonToCopyTranslation'),
+            encryptButton: document.getElementById("encryptButton"),
+            decryptButton: document.getElementById("decryptButton"),
         },
-    },
-    actions: {
-        selectInput: document.getElementById('inputToTranslate'),
-        selectResultArea: document.getElementById('resultArea'),
-        selectResultTitle: document.getElementById('resultTitle'),
-        selectResultText: document.getElementById('resultText'),
-        selectButtonToCopyTranslation: document.getElementById('buttonToCopyTranslation'),
+    };
+
+    function updateResultTitle(text) {
+        state.actions.selectResultTitle.textContent = text;
     }
-};
 
-function clearResultArea() {
-    state.actions.selectResultTitle.innerHTML = 'Nenhuma mensagem encontrada';
-    state.actions.selectResultText.innerHTML = 'Digite um texto que você deseja criptografar ou descriptografar';
+    function updateResultText(text) {
+        state.actions.selectResultText.innerHTML = text;
+    }
 
-}
+    function emptyInputWarning() {
+        updateResultTitle('Nenhuma mensagem encontrada');
+        updateResultText('Digite um texto que você deseja criptografar ou descriptografar');
+        toggleCopyButtonDisplay('none');
+    }
 
-function validateInput() {
-    let inputToTranslate = state.actions.selectInput.value;
-    return inputToTranslate.length > 0;
-}
+    function resetState() {
+        updateResultTitle('');
+        updateResultText('');
+        toggleCopyButtonDisplay('none');
+    }
 
-function displayCopyButtonNone() {
-    return state.actions.selectButtonToCopyTranslation.style.display = 'none';
+    function validateInput() {
+        const inputToTranslate = state.actions.selectInput.value.trim();
+        return inputToTranslate.length > 0;
+    }
 
-}
+    function toggleCopyButtonDisplay(display) {
+        state.actions.selectButtonToCopyTranslation.style.display = display;
+    }
 
-function displayCopyButtonBlock() {
-    return state.actions.selectButtonToCopyTranslation.style.display = 'block';
-}
+    function copyTranslation() {
+        const textToCopy = state.actions.selectResultText.innerHTML;
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                console.log('Texto copiado com sucesso!');
+            })
+            .catch((error) => {
+                console.error('Erro ao copiar o texto:', error);
+            });
+    }
 
-function translateText(text, translationMap) {
-    return text.replace(/[aeiou]/g, match => translationMap[match] || match);
-}
+    function processText(operation) {
+        const input = state.actions.selectInput.value;
+        const dictionary = getDictionary(operation);
+        const pattern = new RegExp(Object.keys(dictionary).join('|'), 'g');
+        const processedText = input.replace(pattern, match => dictionary[match]);
+        updateResultText(processedText);
+    }
 
-function encrypt() {
-    if (!validateInput()) {
-        return [clearResultArea(), displayCopyButtonNone()];
+    function getDictionary(operation) {
+        return {
+            encrypt: state.values.dictionary,
+            decrypt: reverseObject(state.values.dictionary),
+        }[operation];
+    }
+
+    function reverseObject(obj) {
+        return Object.fromEntries(Object.entries(obj).map(([key, value]) => [value, key]));
+    }
+
+    function handleOperation(operation) {
+        if (!validateInput()) {
+            emptyInputWarning();
         } else {
-        let inputToTranslate = state.actions.selectInput.value;
-        let translatedText = translateText(inputToTranslate, state.values.vowelsToEncrypt);
-
-        displayCopyButtonBlock();
-        state.actions.selectResultTitle.innerHTML = translatedText;
+            resetState();
+            processText(operation);
+            toggleCopyButtonDisplay('block');
+            copyTranslation();
+        }
     }
-}
 
-function decrypt() {
-    if (!validateInput()) {
-        return [clearResultArea(), displayCopyButtonNone()];
-        } else {
-        let selectInput = state.actions.selectInput.value;
-        let translatedText = translateText.reverse(selectInput, state.values.vowelsToDecrypt);
+    // Configurando os eventos de clique
+    state.actions.encryptButton.onclick = () => handleOperation('encrypt');
+    state.actions.decryptButton.onclick = () => handleOperation('decrypt');
 
-        displayCopyButtonBlock();
-        state.actions.selectResultTitle.innerHTML = translatedText;
-    }
+    return {
+        encrypt: () => handleOperation('encrypt'),
+        decrypt: () => handleOperation('decrypt')
+    };
 }
+TranslatorApp();

@@ -1,15 +1,32 @@
-# Criptografador
+# TRADUTOR DE TEXTO: STEALTHCRYPT
+
+## Descrição
+Aplicação de criptografia de textos, desenvolvido utilizando: JavaScript, HTML e CSS.
+
+## Funcionalidades
+
+### Criptografia e Descriptografia
+O tradutor utiliza um dicionário interno para substituir as vogais por palavras específicas durante a criptografia e realiza o processo inverso durante a descriptografia.
+
+### Interface Amigável
+A interface consiste em uma área de entrada de texto, um botão "Criptografar", um botão "Descriptografar", uma área de resultado e um botão para copiar o texto traduzido.
+
+### Copiar Texto
+O botão 'Copiar' permite que o usuário copie facilmente o texto traduzido para a área de transferência.
+
 ## Objetivo
-Aplicação de criptografia de textos.
+O objetivo deste projeto é fornecer uma ferramenta simples e eficaz para criptografar e descriptografar textos de maneira lúdica, substituindo vogais por palavras específicas.
 
 ## Dependências Necessárias
-Navegador Web: A aplicação deve ser executada em um navegador moderno que suporte JavaScript.
+Não são necessárias dependências externas. Apenas um navegador atualizado com JavaScript ativado.
 
 ## Como Rodar
-Acesse o site [julianachavespalm.github.io/encriptador](julianachavespalm.github.io/encriptador).
-
-## Tecnologias utilizadas
-HTML, CSS e Javascript.
+Para utilizar o tradutor, basta acessar o site [julianachavespalm.github.io/encrypt](https://julianachavespalm.github.io/encript). Insira o texto desejado na área de entrada, escolha entre criptografar ou descriptografar, e visualize o resultado na área designada.
 
 ## Autora
-Juliana Chaves Palm
+Este tradutor foi desenvolvido por Juliana Chaves Palm.
+
+## Contribuição
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, por favor, crie uma issue ou envie um pull request.
+
+**Divirta-se traduzindo seus textos!** 🌐🔠

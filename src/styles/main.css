@@ -31,10 +31,20 @@ body {
 .content {
     padding: 1.5rem 1rem;
 }
+
 .content__button {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1.5rem;
+    min-width: 15rem; /*remover depois*/
+
+    border-radius: 1.5rem;
+    border: 1px solid transparent;
+    margin: 0.5rem 0;
+
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .content__button--display-none {
