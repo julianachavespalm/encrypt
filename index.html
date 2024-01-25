@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <title>StealthCrypt</title>
+</head>
+<body>
+    <header class="banner">
+        <h1 class="banner__logo">STEALTHCRYPT <br><span class="banner_logo banner_logo--smaller">DECODIFICADOR DE TEXTOS</span></h1>
+    </header>
+    <main class="content">
+        <input type="text" id="inputToTranslate" class="content__input">
+        <div class="content__advise">
+            <p class="content__advise__text">
+                <span class="material-symbols-outlined" aria-disabled="true">warning</span>
+                Apenas letras minúsculas e sem acento.
+            </p>
+        </div>
+        <div class="content__buttons">
+            <button onclick="encrypt()" id="encryptButton" class="content__button content__button--dark-blue">
+                <span class="material-symbols-outlined">encrypted</span>
+                Criptografar
+            </button>
+            <button onclick="decrypt()" id="decryptButton" class="content__button content__button--ligth-blue">
+                <span class="material-symbols-outlined">no_encryption</span>
+                Descriptografar
+            </button>
+        </div>
+        <div class="content__results" id="resultArea">
+            <h2 class="content__result__title" id="resultTitle"></h2>
+            <p class="content__results__text" id="resultText"></p>
+            <button id="buttonToCopyTranslation" onclick="copyTranslation()" class="content__button content__button--display-none content__button--ligth-blue">
+                <span class="material-symbols-outlined" aria-disabled="true">content_copy</span>
+                Copiar
+            </button>
+        </div>
+    </main>
+    <footer class="social-media">
+        <p class="social-media__text">Desenvolvido por Juliana Chaves Palm</p>
+        <ul class="social-media__list">
+            <li class="social-media__item">
+                <a href="https://www.linkedin.com/in/julianachavespalm/" class="social-media__link" aria-label="Hiperlink para o Linkedin de Juliana Chaves Palm" title="Linkedin de Juliana Chaves Palm"><i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-media__item">
+                <a href="https://www.github.com/julianachavespalm" class="social-media__link" aria-label="Hiperlink para o Github de Juliana Chaves Palm" title="Github de Juliana Chaves Palm">
+                    <i class="fa-brands fa-github-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://kit.fontawesome.com/e0954b0c75.js" crossorigin="anonymous"></script>
+    <script src="./src/js/engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Encrypt</title>
+	<style type="text/css" media="screen">
+		*{
+			padding: 0;
+			box-sizing: border-box;
+			margin: 0;
+		}
+
+		body{
+			font-family: sans-serif;
+			color: #fff;
+			background-color: #333;
+		}
+
+		header{
+			background-color: #202020;
+			color: #fff;
+			height: 20vh;
+		}
+
+		main{
+			display: flex;
+			max-width: 1200px;
+			margin: 0 auto;
+			
+			height: 80vh;
+		}
+
+		header p{
+			padding-top: 40px;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.direito p {
+			text-align: center;
+			padding: 10px;
+			margin-bottom: 50px;
+		}
+
+		h1{
+			padding: 30px;
+			text-align: center;
+		}
+
+		.direito{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 50%;
+		}
+
+		.esquerdo{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 50%;
+			border-right: 1px solid #202020;
+		}
+
+		#campoTexto{
+			margin-top: 100px;
+			height: 40px;
+			border: none;
+			padding: 10px;
+		}
+
+		.botoes{
+			display: flex;
+		}
+
+		button{
+			cursor: pointer;
+			margin: 10px;
+			height: 40px;
+			padding: 10px;
+			border: none;
+			background-color: #202020;
+			color: #fff;
+			transition: .3s;
+			border-radius: 5px;
+		}
+
+		button:hover{
+			background-color: #111;
+			transform: scale(0.9);
+		}
+
+		.cima{
+			height: 70%
+		}
+
+		img{
+			height: 200px;
+			margin-left: 25%;
+		}
+	</style>
+</head>
+<body>
+	<header id="header" class="cabecalho">
+		<div class="logo">
+			<p>CODIFICADOR</p>
+		</div>
+	</header>	
+	<main>
+		<div class="esquerdo">
+			<div class="cima">
+				<input type="text" name="texto" placeholder="Digite seu texto aqui..." id="campoTexto">
+			</div>
+			
+			
+			<div class="botoes">
+				<button id="cripto">Criptpgrafar</button>
+				<button id="decripto">Descriptografar</button>
+			</div>
+		</div>
+		<div class="direito">
+			<div class="cima">
+				<h1>Mensagens Codificadas</h1>
+				<p id="paragrafo">Aqui aparecerá seu texto</p>
+				<img src="detetive.png" alt="desenho de um detetive estilo cartoon">
+			</div>
+		</div>
+	</main>
+	
+	<script>
+
+		var cripto = document.getElementById("cripto");
+		var decripto = document.getElementById("decripto");
+
+		function criptografar(){
+
+			var input = document.getElementById("campoTexto").value;
+
+			var textoCodificado = input.replace(/a/g, "123").replace(/e/g, "5").replace(/i/g, "46").replace(/o/g, "7").replace(/u/g, "8");
+			var paragrafo = document.getElementById("paragrafo").innerHTML = textoCodificado;
+		};
+
+		cripto.onclick = criptografar;
+
+		function descriptografar(){
+			var input = document.getElementById("campoTexto").value;
+
+			var textoCodificado = input.replace(/123/g, "a").replace(/5/g, "e").replace(/46/g, "i").replace(/7/g, "o").replace(/8/g, "u");
+			var paragrafo = document.getElementById("paragrafo").innerHTML = textoCodificado;
+		}
+
+		decripto.onclick = descriptografar;
+	</script>
+</body>
+</html>

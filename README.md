@@ -1,4 +1,4 @@
-# Encriptador
+# Criptografador
 ## Objetivo
 Aplicação de criptografia de textos.
 
