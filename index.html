@@ -6,34 +6,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/main.css">
-    <title>StealthCrypt</title>
+    <title>Decodificador de Textos</title>
 </head>
 <body>
     <header class="banner">
-        <h1 class="banner__logo">STEALTHCRYPT <br><span class="banner_logo banner_logo--smaller">DECODIFICADOR DE TEXTOS</span></h1>
+        <h1 class="banner__logo">decodificador de textos</h1>
     </header>
     <main class="content">
-        <input type="text" id="inputToTranslate" class="content__input">
+        <input id="inputToTranslate" class="content__input" placeholder="digite seu texto">
         <div class="content__advise">
-            <p class="content__advise__text">
+            <label for="inputToTranslate" class="content__advise__text">
                 <span class="material-symbols-outlined" aria-disabled="true">warning</span>
                 Apenas letras minúsculas e sem acento.
-            </p>
+            </label>
         </div>
         <div class="content__buttons">
-            <button onclick="encrypt()" id="encryptButton" class="content__button content__button--dark-blue">
+            <button id="encryptButton" class="content__button">
                 <span class="material-symbols-outlined">encrypted</span>
                 Criptografar
             </button>
-            <button onclick="decrypt()" id="decryptButton" class="content__button content__button--ligth-blue">
+            <button id="decryptButton" class="content__button">
                 <span class="material-symbols-outlined">no_encryption</span>
                 Descriptografar
             </button>
         </div>
         <div class="content__results" id="resultArea">
-            <h2 class="content__result__title" id="resultTitle"></h2>
+            <h2 class="content__results__title" id="resultTitle"></h2>
             <p class="content__results__text" id="resultText"></p>
-            <button id="buttonToCopyTranslation" onclick="copyTranslation()" class="content__button content__button--display-none content__button--ligth-blue">
+            <button id="buttonToCopyTranslation" class="content__button content__button--display-none content__button--ligth-blue">
                 <span class="material-symbols-outlined" aria-disabled="true">content_copy</span>
                 Copiar
             </button>
@@ -54,6 +54,6 @@
         </ul>
     </footer>
     <script src="https://kit.fontawesome.com/e0954b0c75.js" crossorigin="anonymous"></script>
-    <script src="./src/js/engine.js"></script>
+    <script src="./src/js/translatorApp.js"></script>
 </body>
 </html>
