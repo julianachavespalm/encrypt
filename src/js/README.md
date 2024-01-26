@@ -43,17 +43,17 @@ O objetivo deste aplicativo é fornecer uma interface simples para criptografar 
 
 ## Uso
 
-Para usar o Aplicativo de Tradução, inicialize-o usando a função `translatorApp()`. Isso retornará um objeto com os métodos `encrypt` e `decrypt` que podem ser chamados para realizar as operações correspondentes.
+Para utilizar o Aplicativo de Tradução, basta chamar a função `translatorApp()`. Isso iniciará o aplicativo, e você pode então realizar as operações de criptografia e descriptografia imediatamente.
 
 ```javascript
-// Inicialize o Aplicativo de Tradução
-const tradutor = TranslatorApp();
+// Inicialização do Aplicativo de Tradução
+translatorApp();
 
 // Exemplo: Criptografar texto
-tradutor.encrypt();
+translatorApp().encrypt();
 
 // Exemplo: Descriptografar texto
-tradutor.decrypt();
+translatorApp().decrypt();
 ```
 
 Sinta-se à vontade para personalizar o mapa de tradução e outros aspectos do aplicativo para atender ao seu caso de uso específico.

@@ -95,10 +95,10 @@ function translatorApp() {
         }
     }
 
-    // Atribuição de manipuladores de eventos
-    encryptButton.onclick = () => handleTranslationOperation('encrypt');
-    decryptButton.onclick = () => handleTranslationOperation('decrypt');
-    copyButton.onclick = () => copyTranslationToClipboard();
+    // Atribuição de manipuladores de eventos para os botões de criptografia, descriptografia e cópia
+    encryptButton.addEventListener('click', () => handleTranslationOperation('encrypt'));
+    decryptButton.addEventListener('click', () => handleTranslationOperation('decrypt'));
+    copyButton.addEventListener('click', copyTranslationToClipboard);
 
     // Métodos públicos
     return {
