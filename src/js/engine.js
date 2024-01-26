@@ -90,7 +90,6 @@ function TranslatorApp() {
         }
     }
 
-    // Configurando os eventos de clique
     state.actions.encryptButton.onclick = () => handleOperation('encrypt');
     state.actions.decryptButton.onclick = () => handleOperation('decrypt');
 
@@ -99,4 +98,5 @@ function TranslatorApp() {
         decrypt: () => handleOperation('decrypt')
     };
 }
+
 TranslatorApp();
