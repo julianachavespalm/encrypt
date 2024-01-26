@@ -41,11 +41,6 @@ function translatorApp() {
         updateResult('Nenhuma mensagem encontrada', 'Digite um texto que você deseja criptografar ou descriptografar');
     }
 
-    function resetAppState() {
-        updateResult('', '');
-        setResultVisibility('none', 'none', 'none');
-    }
-
     function isInputValid() {
         const inputToTranslate = inputElement.value.trim();
         return inputToTranslate.length > 0;
@@ -95,7 +90,6 @@ function translatorApp() {
         if (!isInputValid()) {
             showEmptyInputWarning();
         } else {
-            resetAppState();
             processTextWithOperation(operation);
             setResultVisibility('none', 'block', 'block');
         }
