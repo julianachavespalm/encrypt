@@ -52,6 +52,7 @@ body {
 }
 
 .content__input {
+    width: 100%;
     padding: 0.875rem;
     border: none;
     border-left: 0.25rem solid var(--dark-blue-300);
@@ -271,8 +272,6 @@ body {
         overflow: visible;
         margin: 0 2rem 0 0;
     }
-
-    .content__input-container { width: 100%; }
 
     .content__button {
         margin:0
