@@ -25,7 +25,10 @@ O objetivo deste aplicativo é fornecer uma interface simples para criptografar 
   - `showEmptyInputWarning()`: Exibe um aviso quando nenhum texto de entrada é fornecido.
   - `resetAppState()`: Reinicia o estado do aplicativo, limpando as áreas de resultado e ocultando o botão de cópia.
   - `isInputValid()`: Valida se o texto de entrada não está vazio após a remoção de espaços em branco.
-  - `removeInputAccents`: remove os acentos: agudo (`\u0301`), circunflexo (`\u0302`), til (`\u0303`), trema (`\u030a`), círculo acima. 
+  - `removeInputAccents`: Esta função recebe uma string como entrada e realiza as seguintes operações:
+    1. Substitui apenas as **vogais maiúsculas** por suas versões em minúsculas.
+    2. Remove os seguintes acentos: agudo (`\u0301`), circunflexo (`\u0302`), til (`\u0303`), trema (`u308`) e círculo acima (`\u030a`).
+    3. Retorna a string resultante sem acentos e com vogais em minúsculo.
   - `copyTranslationToClipboard()`: Copia o texto traduzido para a área de transferência.
   - `reverseTranslationMap(map)`: Inverte o mapa de tradução fornecido.
   - `getTranslationMapForOperation(operation)`: Retorna o mapa de tradução com base na operação especificada (criptografar/descriptografar).

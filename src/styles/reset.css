@@ -5,13 +5,6 @@
     box-sizing: border-box;
 }
 
-
-ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -19,4 +12,10 @@ a {
 
 a:visited {
     color:inherit
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
 }

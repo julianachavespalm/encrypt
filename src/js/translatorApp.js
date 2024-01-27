@@ -68,12 +68,15 @@ function translatorApp() {
 
     // Função para remover acentuação do texto de entrada para tradução
     function removeInputAccents(text) {
-        return text.normalize("NFD").replace(/[\u0301\u0302\u0303\u0308\u030a]/g, "");
+        const textToLowerCase = text.replace(/[aeiouAEIOUÀ-Üà-ü]/g, vogal => vogal.toLowerCase());
+        const textWithoutAccents = textToLowerCase.normalize("NFD").replace(/[\u0301\u0302\u0303\u0308\u030a]/g, "");
+
+        return textWithoutAccents;
     }
 
     // Funções de processamento de texto
     function processTextWithOperation(operation) {
-        const input = inputElement.value.toLowerCase();
+        const input = inputElement.value;
         const translationMap = getTranslationMapForOperation(operation);
         const pattern = new RegExp(Object.keys(translationMap).join('|'), 'g');
 
