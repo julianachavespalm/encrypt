@@ -21,7 +21,7 @@ O objetivo deste projeto é fornecer uma ferramenta simples e eficaz para cripto
 Não são necessárias dependências externas. Apenas um navegador atualizado com JavaScript ativado.
 
 ## Como Rodar
-Para utilizar o tradutor, basta acessar o site [https://julianachavespalm.github.io/encrypt]. Insira o texto desejado na área de entrada, escolha entre criptografar ou descriptografar, e visualize o resultado na área designada.
+Para utilizar o tradutor, basta acessar o site https://julianachavespalm.github.io/encrypt. Insira o texto desejado na área de entrada, escolha entre criptografar ou descriptografar, e visualize o resultado na área designada.
 
 ## Autora
 Este tradutor foi desenvolvido por Juliana Chaves Palm.
