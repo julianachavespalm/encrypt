@@ -28,9 +28,7 @@ function translatorApp() {
     function setResultVisibility(titleDisplay, textDisplay, buttonDisplay) {
         resultTitle.style.display = titleDisplay;
         resultText.style.display = textDisplay;
-        if (copyButton) {
-            copyButton.style.display = buttonDisplay;
-        }
+        copyButton.style.display = buttonDisplay;
     }
 
     function updateInputText(text) {
@@ -103,11 +101,7 @@ function translatorApp() {
     // Atribuição de manipuladores de eventos para os botões de criptografia, descriptografia e cópia
     encryptButton.addEventListener('click', () => handleTranslationOperation('encrypt'));
     decryptButton.addEventListener('click', () => handleTranslationOperation('decrypt'));
-    
-    // Verifica se o botão de cópia existe antes de atribuir o manipulador de eventos
-    if (copyButton) {
-        copyButton.addEventListener('click', copyTranslationToClipboard);
-    }
+    copyButton.addEventListener('click', copyTranslationToClipboard);
 
     // Métodos públicos
     return {
