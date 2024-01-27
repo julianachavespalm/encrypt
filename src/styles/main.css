@@ -39,6 +39,37 @@ body {
     user-select: none;
 }
 
+.content__noscript {
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: var(--black); 
+    transition: box-shadow 0.3s;
+}
+
+.content__noscript:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Efeito de elevação ao passar o mouse */
+}
+
+.content__noscript-title {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--dark-blue-500); /* Cor do título azul semelhante ao Windows */
+}
+
+.content__noscript-text {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+
 .content__container {
     display: flex;
     flex-direction: column;

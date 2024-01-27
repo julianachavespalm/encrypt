@@ -13,6 +13,12 @@
         <h1 class="banner__logo">decodificador de textos</h1>
     </header>
     <main class="content">
+        <noscript>
+            <div class="content__noscript">
+                <h2 class="content__noscript-title">JavaScript não habilitado!!!</h2>
+                <p class="content__noscript-text">Para utilizar o decodificador de textos, é necessário habilitar o JavaScript.</p>
+            </div>
+        </noscript>
         <section class="content__container content__container--left">
             <div class="content__input-container">
                 <input id="inputToTranslate" class="content__input" placeholder="digite seu texto"> 
@@ -37,7 +43,7 @@
                 <h2 class="content__title-result" id="resultTitle"></h2>
                 <p class="content__text-result" id="resultText"></p>
             </div>
-            
+            <button id="buttonToCopyTranslation" class="content__button content__button--hidden-copy content__button--light-blue">Copiar</button>     
         </section>
     </main>
     <footer class="social-media">
@@ -55,6 +61,6 @@
         </ul>
     </footer>
     <script src="https://kit.fontawesome.com/e0954b0c75.js" crossorigin="anonymous"></script>
-    <script src="./src/js/translatorApp.js"></script>
+    <script src="./src/js/translatorApp.js" defer></script>
 </body>
 </html>
