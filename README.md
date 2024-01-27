@@ -1,4 +1,4 @@
-# TRADUTOR DE TEXTO: STEALTHCRYPT
+# DECODIFICADOR DE TEXTOS
 
 ## Descrição
 Aplicação de criptografia de textos, desenvolvido utilizando: JavaScript, HTML e CSS.
