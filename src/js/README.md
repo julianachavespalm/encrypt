@@ -37,8 +37,8 @@ O objetivo deste aplicativo é fornecer uma interface simples para criptografar 
   - `handleTranslationOperation(operation)`: Manipula a operação de tradução, exibindo avisos para entrada vazia e iniciando o processo de tradução.
   
 - **Manipuladores de Eventos:**
-  - `encryptButton.onclick`: Inicia o processo de criptografia.
-  - `decryptButton.onclick`: Inicia o processo de descriptografia.
+  - `encryptButton.addEventListener('click', () => handleTranslationOperation('encrypt'));`: Inicia o processo de criptografia.
+  - `decryptButton.addEventListener('click', () => handleTranslationOperation('decrypt'));`: Inicia o processo de descriptografia.
 
 - **Métodos Públicos:**
   - `encrypt()`: Método público para iniciar o processo de criptografia.

@@ -14,6 +14,7 @@
     </header>
     <main class="content">
         <section class="content__container content__container--left">
+            <div class="content__input-container">
                 <input id="inputToTranslate" class="content__input" placeholder="digite seu texto"> 
                 <label for="inputToTranslate" class="content__label">
                     <span class="material-symbols-outlined" aria-disabled="true">warning</span>
@@ -21,11 +22,9 @@
                 </label>
             </div>
             <div class="content__buttons">
-                
                 <button id="encryptButton" class="content__button content__button--dark-blue">
                     <span class="material-symbols-outlined">lock</span>
                     Criptografar
-                    
                 </button>
                 <button id="decryptButton" class="content__button content__button--light-blue">
                     <span class="material-symbols-outlined">no_encryption</span>
@@ -38,10 +37,7 @@
                 <h2 class="content__title-result" id="resultTitle"></h2>
                 <p class="content__text-result" id="resultText"></p>
             </div>
-            <button id="buttonToCopyTranslation" class="content__button content__button--hidden-copy content__button--light-blue">
-                <i class="fa-solid fa-copy"></i>
-                Copiar
-            </button>
+            
         </section>
     </main>
     <footer class="social-media">

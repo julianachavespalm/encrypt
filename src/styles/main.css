@@ -19,9 +19,7 @@
 body {
     display: flex;
     flex-direction: column;
-
     background-color: var(--light-blue-100);
-
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
@@ -33,12 +31,10 @@ body {
 .banner__logo {
     width: 100%;
     height: 100%;
-
     font-size: 1.25rem;
     font-family: 'Oswald', sans-serif;
     color: var(--dark-blue-300);
     text-align: right;
-
     transition: ease-in-out 0.8s;
     user-select: none;
 }
@@ -52,8 +48,8 @@ body {
 .content__container--right {
     border-radius: 2rem;
     background-color: var(--white);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
-
 
 .content__input {
     padding: 0.875rem;
@@ -63,7 +59,6 @@ body {
     border-radius: 2rem;
     background-color: transparent;
     font-size: 1rem;
-
     transition: ease-in-out 0.2s;
 }
 
@@ -86,7 +81,6 @@ body {
     display: flex;
     align-items: center;
     margin: 0.5rem 0;
-
     color: var(--gray);
     font-size: 0.75rem;
     font-style: normal;
@@ -99,7 +93,6 @@ body {
     flex-direction: column;
     align-items: space-between;
     align-items: center;
-
     transition: ease-in-out 0.4s;
 }
 
@@ -108,9 +101,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-
     border-radius: 1.5rem;
-
     font-size: 1rem;
     font-weight: 400;
     transition: ease-in-out 300ms;
@@ -124,7 +115,6 @@ body {
 
 .content__button--light-blue {
     border: 1px solid var(--dark-blue-300);
-
     background-color: transparent;
     color: var(--dark-blue-300);   
 }
@@ -132,14 +122,12 @@ body {
 .content__button--light-blue:hover,
 .content__button--light-blue:focus {
     outline: none;
-
     background-color: var(--light-blue-200);
     transition: ease-in-out 300ms;
 }
 
 .content__button--dark-blue {
     border: 1px solid var(--dark-blue-300);
-
     background-color: var(--dark-blue-300);
     color: var(--white);   
 }
@@ -147,7 +135,6 @@ body {
 .content__button--dark-blue:hover,
 .content__button--dark-blue:focus {
     outline: none;
-
     background-color: var(--dark-blue-500);
     transition: ease-in-out 300ms;
 }
@@ -158,14 +145,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-
-    font-size: 0.825rem;
+    font-size: 1.05rem;
+    font-family: 'Oswald', sans-serif;
     color: var(--dark-blue-300);
     text-align: right;
     transition: ease-in-out 0.8s;
 }
-
-
 
 @media (max-width: 767px) {
     body {
@@ -211,10 +196,104 @@ body {
     }
 }
 
-@media (min-width: 768px) {
 
+
+@media (min-width: 768px) {
+    body {
+        padding: 2.5rem;
+    }
+
+    .banner {
+        height: calc(15vh - 2.5rem);
+    }
+
+    .content__container--left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 40vh;
+    }
+
+    .content__container--right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 20vh;
+        margin: 4rem 0;
+        padding: 1.5rem;
+        gap: 1rem;
+        transition: ease-in-out 0.8s;
+    }
+    .content__result {
+        width: 100%;
+    }
+
+    .content__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .content__button {
+        width: 100%;
+    }
+
+    .social-media {
+        min-height: calc(15vh - 2.5rem);
+    }
 }
 
-@media (min-width: 1440px) {
+
+@media (min-width: 1280px) {
+    body {
+        padding: 4rem 4rem 0;
+    }
+
+    .banner {
+        height: calc(15vh - 4rem);
+        margin: 0 0 4rem 0;
+    }
+    
+    .content {
+        height: calc(60vh - 4rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .content__container--left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 65%;
+        height: 100%;
+        overflow: visible;
+        margin: 0 2rem 0 0;
+    }
+
+    .content__input-container { width: 100%; }
+
+    .content__button {
+        margin:0
+    }
+
+    .content__container--right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35%;
+        height: 100%;
+        overflow: visible;
+        margin: 0;
+    }
+
+    .content__result {
+        overflow-y: scroll;
+    }
+
+    .social-media {
+        margin: 4rem 0 0;
+    }
 
 }
